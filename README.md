@@ -38,7 +38,7 @@
 
 ## How can I run the server?
 
-> Read the [requirements](https://github.com/nalmeth/opengarlic.github.io#wrench-requirements).
+> Read the [requirements](https://opengarlic.site#wrench-requirements).
 >
 > Read the [Running Production](docs/Production.md) docs
 
