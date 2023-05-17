@@ -1,93 +1,41 @@
-# :paintbrush: OpenGarlic
+# Website
 
-# :question: QA
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## What is this?
+### Installation
 
-> This is a platform for social drawing games on a webpage.
->
-> The standard game mode is based on the children's game: Telephone.
->
-> However, different game modes can be developed to plugin.
+```
+$ yarn
+```
 
-## What's with the name?
+### Local Development
 
-> This project's name comes from two things. The common use of 'Open' in
->
-> open source software, particularly when a variation of another piece of software.
->
-> Garlic, because it's a malapropism of a similar game.
+```
+$ yarn start
+```
 
-## Why?
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-> Development of this was partly a project to learn some new things.
->
-> The other part is, I find this game genuinely fun to play. I wanted to
->
-> open source the game for others to contribute and be able to run
->
-> their own servers.
+### Build
 
-## How can I contribute?
+```
+$ yarn build
+```
 
-> Feel free to look through the issues and see if anything interests you.
->
-> You can also develop new game modes and share with others.
->
-> [Read the docs](docs/Development.md) on how to get started.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-## How can I run the server?
+### Deployment
 
-> Read the [requirements](https://opengarlic.site#wrench-requirements).
->
-> Read the [Running Production](docs/Production.md) docs
+Using SSH:
 
----
+```
+$ USE_SSH=true yarn deploy
+```
 
-# :toolbox: Tools
+Not using SSH:
 
-## :video_game: Client
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
 
-- React: [https://reactjs.org/](https://reactjs.org/)
-- Socket.io Client: [https://socket.io/](https://socket.io/)
-- Material UI: [https://mui.com/](https://mui.com/)
-- Konvajs: [https://konvajs.org/](https://konvajs.org/)
-- FontAwesome: [https://fontawesome.com/](https://fontawesome.com/)
-- Roboto Font: [https://fontsource.org/fonts/roboto](https://fontsource.org/fonts/roboto)
-
----
-
-## :artificial_satellite: Server
-
-- Node: [https://nodejs.org/en/](https://nodejs.org/en/)
-- Socket.io Server: [https://socket.io/](https://socket.io/)
-- Socket.io Admin UI: [https://github.com/socketio/socket.io-admin-ui/](https://github.com/socketio/socket.io-admin-ui/)
-- Express: [https://expressjs.com/](https://expressjs.com/)
-- Redis Server [https://redis.io/](https://redis.io/)
-- RedisJSON module [https://redis.io/docs/stack/json/](https://redis.io/docs/stack/json/)
-- Redis Client: [https://www.npmjs.com/package/redis](https://www.npmjs.com/package/redis)
-
----
-
-# :wrench: Requirements
-
-- Redis server with the RedisJSON module.
-
-  *Ready-made docker image available via docker-compose.yml*
-
-- Computer with the ability to run docker containers, if you decide to use docker.
-
----
-
-# :sparkles: Features
-
-|                    | Production            | Development          |
-| ------------------ | --------------------- | -------------------- |
-| SSL                | :white_check_mark:    | :white_check_mark:\* |
-| Socket.IO Admin UI | :white_check_mark:\** | :white_check_mark:** |
-| RedisInsight       | :x:                   | :white_check_mark:   |
-| Hot Reload         | :x:                   | :white_check_mark:   |
-
-<sub>\* [Generating localhost certificates](docs/Development.md#lock-ssl-support)</sub>
-
-<sub>\*\* :warning: Interface is not currently secured. This will eventually be fixed. Suggestion is not to run it in production without self-securing.</sub>
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

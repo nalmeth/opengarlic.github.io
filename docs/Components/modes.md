@@ -1,34 +1,9 @@
-# :memo: Creating a game mode
+# Modes
 
-**Game Modes**
+- The main logic of the game mode should go here.
+- Stored in *client/src/components/games*
 
-> Mode files are stored in *client/src/components/games*
-> 
-> The main logic of the game mode would go here.
-
-**Game Screens**
-
-> Screens are stored in *client/src/components/screens*
-> 
-> Screens can be namespaced by creating sub-folders. (*ex. screens/MyGameMode/screen.js*)
-> 
-> Screens are components composed of widgets to build whatever interface you want.
-> 
-> Secondary logic specific to this screen should go here.
-
-**Game Widgets**
-
-> Widgets are stored in *client/src/components/widgets*
-> 
-> Widgets are smaller components that can be combined together to form game screens.
-> 
-> Widgets should also contain their own state/logic if appropriate.
-
-## :building_construction: Basic Game Mode Structure
-
-*client/src/components/games/MyGameMode.js*
-
-```jsx
+```jsx title="client/src/components/games/MyGameMode.js"
 /**
  * MyGameMode Component
  */
@@ -59,64 +34,7 @@ export const settings = {
 }
 ```
 
-*client/src/components/screens/Screen0.js*
-
-```jsx
-/**
- * Screen 0
- */
-const Screen0 = (props) => {
-    /**
-     * Screen specific logic
-     */
-    return (
-        <>
-            <Widget0 {...props} />
-            <Widget1 {...props} />
-        </>
-    )
-}
-
-export default Screen0;
-```
-
-*client/src/components/widgets/Widget0.js*
-
-```jsx
-/**
- * Widget 0
- */
-const Widget0 = (props) => {
-    return (
-        <>
-            <Typography>Hello from Widget 0.</Typography>
-        </>
-    )
-}
-
-export default Widget0;
-```
-
-:star: **Now import the game to finish.**
-
-*client/src/modules/Games.js*
-
-```jsx
-import * as Standard from '../components/games/Standard'; // The standard game mode
-// ...
-import * as MyGameMode from '../components/games/MyGameMode'; // Add your game mode
-
-
-const Games = [
-    Standard,
-    // ...
-    MyGameMode // Add your game mode to the list
-];
-
-export default Games;
-```
-
-## :gear: API
+## API
 
 Game Mode Components receive the following props.
 
