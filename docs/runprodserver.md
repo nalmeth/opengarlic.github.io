@@ -1,4 +1,4 @@
-# Production
+# Run Production Server
 
 ### Built with:
 
@@ -35,18 +35,12 @@ docker compose up -d
 
 :::danger
 At the moment, this interface is not secured! Securing it is on the agenda.
+
+Either secure it yourself or do not run the admin ui container.
 :::
 
 ```
 http://example.com:85
 
 Enter 'http://example.com' as the Server URL
-```
-
-## RedisInsight
-
-RedisInsight is available when using development containers
-
-```
-http://example.com:8001 /
 ```

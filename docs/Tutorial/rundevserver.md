@@ -1,6 +1,6 @@
-# Development
+# Run Development Server
 
-# How To Start
+## How To Start
 
 - Copy the .env.example and rename to .env
 - Set .env variables as needed

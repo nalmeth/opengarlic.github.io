@@ -13,6 +13,45 @@ const MyGameMode = (props) => {
      * Game Logic Here
      */
 
+	// Default events you need to implement
+	const events = {
+		PlayersDone: (lobby, lobbyData) => {
+			// Handle when all players are done
+
+			// Prepare lobby data structure how you want
+			const newData = {
+				...lobbyData,
+				// new data here
+			};
+
+			// Message server to move to the next screen
+			socket.emit('message', {
+				type: 'NextScreen',
+				data: {
+					lobbyCode: lobby.code,
+					lobbyData: newData
+				}
+			});
+		},
+		NextScreen: (lobby) => {
+			// Handle when the game moves to the next screen
+		}
+	}
+
+	useEffect(() => {
+		// Attach the events to the web socket
+		for(const name in events) {
+			socket.on(name, events[name]);
+		}
+
+		// Detach the events from the web socket
+		return () => {
+			for(const name in events) {
+				socket.off(name, events[name]);
+			}
+		}
+	}, []);
+
     return (
         <>
         {props.gameScreen === 0 && <Screen0 {...props} />}

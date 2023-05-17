@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Introduction
 
 ## What is this?
@@ -32,7 +28,7 @@ sidebar_position: 1
 
 ## How can I run the server?
 
-> Read the [requirements](https://opengarlic.site#requirements).
+> Read the [requirements](intro#requirements).
 >
 > Read the [Running Production](production) docs
 
@@ -56,7 +52,7 @@ sidebar_position: 1
 - RedisJSON module [https://redis.io/docs/stack/json/](https://redis.io/docs/stack/json/)
 - Redis Client: [https://www.npmjs.com/package/redis](https://www.npmjs.com/package/redis)
 
-# Requirements
+## Requirements
 
 - Redis server with the RedisJSON module.
 
