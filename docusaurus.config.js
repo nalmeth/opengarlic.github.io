@@ -20,7 +20,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'nalmeth', // Usually your GitHub org/user name.
   projectName: 'opengarlic.site', // Usually your repo name.
-  deploymentBranch: 'deployment',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
