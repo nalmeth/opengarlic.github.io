@@ -24,13 +24,13 @@
 > Feel free to look through the issues and see if anything interests you.
 > You can also develop new game modes and share with others.
 >
-> [Read the docs](development) on how to get started.
+> [Read the docs](Tutorial/creatingagame) on how to get started.
 
 ## How can I run the server?
 
 > Read the [requirements](intro#requirements).
 >
-> Read the [Running Production](production) docs
+> Read the [Running Production](runprodserver) docs
 
 
 ## Client
