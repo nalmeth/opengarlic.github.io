@@ -5,6 +5,8 @@
 - Stored in *client/src/components/screens*
 - Can be namespaced by creating sub-folders. (*ex. screens/MyGameMode/screen.js*)
 
+## Example
+
 ```jsx title="client/src/components/screens/Screen0.js"
 /**
  * Screen 0

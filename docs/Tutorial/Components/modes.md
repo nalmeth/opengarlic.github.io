@@ -1,7 +1,11 @@
+import Highlight from '@site/src/components/Highlight';
+
 # Modes
 
 - The main logic of the game mode should go here.
 - Stored in *client/src/components/games*
+
+## Example
 
 ```jsx title="client/src/components/games/MyGameMode.js"
 /**
@@ -72,6 +76,17 @@ export const settings = {
     // other settings...
 }
 ```
+
+## Mode settings
+
+You may add any settings you need, but there are a few pre-defined you should implement:
+- **maxPlayers**: The maximum number of players allowed in the lobby
+- **groupSize**: If the game requires multiples of players (ex. player count divisible by 3)
+- **time**: The seconds allowed for each game screen
+
+:::info
+Currently these settings are static, but that will change in future revisions.
+:::
 
 ## API
 
