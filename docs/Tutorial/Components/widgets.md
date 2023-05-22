@@ -22,17 +22,15 @@ export default Widget0;
 ```
 
 ## Existing Widgets
-
-**Bubble**: Creates chat bubbles. *(ex. Standard end screen)*
+### Bubble
+Creates chat bubbles. *(ex. Standard end screen)*
 ```ts
-Props
-
 side:string		// BUBBLE_LEFT or BUBBLE_RIGHT constants
 children:mixed	// Child nodes
 ```
 
-**DrawingArea**: Combines *DrawingBoard*, *DrawingTools* and *DrawingSidePanel*
-to form an entire drawing set.
+### DrawingArea
+Combines *DrawingBoard*, *DrawingTools* and *DrawingSidePanel* to form an entire drawing set.
 ```ts
 showTools:boolean					// Whether to display the drawing tools panel
 stageRef:React.MutableRefObject 	// Link to the stage component in DrawingBoard
@@ -43,7 +41,8 @@ MAX_HEIGHT:number					// Maximum height of the drawing board
 onChange:function(shapes:Array)		// Function that receives shape data when the state changes
 ```
 
-**DrawingBoard**: The board to draw on
+### DrawingBoard
+The board to draw on
 ```ts
 brushColor:string					// Hexidecimal stroke color
 bgColor:string						// Hexidecimal background color
@@ -59,51 +58,71 @@ MAX_HEIGHT:number					// Maximum height of the drawing board
 onChange:function(shapes:Array)		// Function that receives shape data when the state changes
 ```
 
-**DrawingSidePanel**: Combines *DrawToolPanel* and *ColorPalette* to form and entire tool/color
-selection set.
+### DrawingSidePanel
+Combines *DrawToolPanel* and *ColorPalette* to form an
+entire tool/color selection set.
 ```ts
 toolSettings:object 				// Object with all the tool settings
 									// (brushColor, bgColor, opacity, strokeWidth, lineCap, tension, tool)
-setTool:function(toolName:string, value:mixed)	// Function that receives the name of the tool to and it's new value
+setTool:function(toolName:string, value:mixed)	// Hook that returns the name of the tool and it's new value
 resetTools:function 				// Function to call that resets all the tool settings
 ```
 
-**ColorPalette**: Color selection.
-
+### ColorPalette
+Color selection.
 ```ts
-Props
-
-setColor:function(color:string)		// Function that receives the selected color (as hexidecimal)
+setColor:function(color:string)		// Hook that returns the selected color (as hexidecimal)
 ```
 
-**DrawToolPanel**: Panel that displays all the drawing tools
+### DrawToolPanel
+Panel that displays all the drawing tools.
 ```ts
 activeTool:object 								// One of the drawing tool objects defined in DrawingTools
 setTool:function(toolName:string, value:mixed)	// Function that receives the name of the tool to and it's new value
 ```
 
-**GameButton**: MUI Button component styled like other buttons
+### GameButton
+MUI Button component styled like other buttons.
 
 > Accepts all the same props as a MUI Button. Except 'variant' which is locked to 'contained'
 > See: [MUI Button](https://mui.com/material-ui/react-button/)
 
-**GameInput**: MUI TextField component
+### GameInput
+MUI TextField component styled like other inputs.
 
-> Accepts all the same props as a MUI TextField. Except 'onChange', which is set to automatically
-> pass the input value when it changes.
+> Accepts all the same props as a MUI TextField.
 > See: [MUI TextField](https://mui.com/material-ui/react-text-field/)
+```ts
+initialValue:string			// Value to automatically populate the input
+onUpdate:function(value)	// Hook to return updated values during change
+```
 
-**GameSwitch**: MUI Switch component
+### GameNumericInput
+MUI TextField component styled like other inputs. Accepts only numbers.
+Can be used for number ranges.
+> Accepts all the same props as a MUI TextField.
+> See: [MUI TextField](https://mui.com/material-ui/react-text-field/)
+```ts
+initialValue:number 		// Value to automatically populate the input
+onUpdate:function(value)	// Hook to return updated values during change
+minValue:number 			// Minimum value to allow (optional)
+maxValue:number 			// Maximum value to allow (optional)
+```
+
+### GameSwitch
+MUI Switch component.
 
 > Accepts all the same props as a MUI Switch. This may change in the future.
 > See: [MUI Switch](https://mui.com/material-ui/react-switch/)
 
-**GameText**: MUI Typography component.
+### GameText
+MUI Typography component.
 ```ts
 displayText:string		// Text to display
 ```
 
-**GameTimer**: CountdownCircleTimer component.
+### GameTimer
+CountdownCircleTimer component. See [react-countdown-circle-timer](https://github.com/vydimitrov/react-countdown-circle-timer)
 ```ts
 timerKey:string					// Key prop for the component (default 'gameTimer')
 isPlaying:boolean				// Whether the timer is active (default 'true')
@@ -119,7 +138,8 @@ onComplete:function 			// On timer complete handler
 children:mixed					// Render function to customize the time/content in the center of the circle
 ```
 
-**PlayerList**: Displays list of players
+### PlayerList
+Displays list of players.
 ```ts
 icons:boolean					// Displays the owner and kick icon buttons (default 'true')
 buttonList:boolean				// Whether the list items are buttons or not (default 'false')
