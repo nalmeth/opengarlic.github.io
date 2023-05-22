@@ -5,7 +5,7 @@ import Highlight from '@site/src/components/Highlight';
 - The main logic of the game mode should go here.
 - Stored in *client/src/components/games*
 
-## Example
+## Example Mode
 
 ```jsx title="client/src/components/games/MyGameMode.js"
 /**
@@ -72,8 +72,7 @@ export default MyGameMode;
 export const title = 'MyGameMode';
 export const description = 'My mode plays like this...';
 export const settings = {
-    maxPlayers: 8,
-    // other settings...
+    // See below
 }
 ```
 
@@ -84,9 +83,72 @@ You may add any settings you need, but there are a few pre-defined you should im
 - **groupSize**: If the game requires multiples of players (ex. player count divisible by 3)
 - **time**: The seconds allowed for each game screen
 
-:::info
-Currently these settings are static, but that will change in future revisions.
-:::
+## Settings Structure
+```ts
+{
+	name:string							// Storage key (lobby.settings.name)
+
+	displayName:string					// Name to display in settings dialog
+
+	default:mixed						// The default value, this should match the intitial value
+										// This value changes temporarily when adjusting the settings
+
+	component:function(newProps:object)	// Function that returns a JSX.Element for adjusting the value
+										// in the settings dialog. New props passed are:
+										// initialValue:number		Updated value from settings dialog
+										// onUpdate:function(value)	Used to hook value updates from component
+}
+```
+
+## Example Settings
+```ts
+export const settings = [
+	{
+		name: 'maxPlayers',
+		displayName: 'Max Players',
+		default: 15,
+		component: (newProps) => {
+			let props = {
+				initialValue: 15,
+				minValue: 1,
+				maxValue: 15,
+				required: true
+			}
+			props = {...props, ...newProps};
+			return <GameNumericInput {...props} />
+		}
+	},
+	{
+		name: 'groupSize',
+		displayName: 'Group Size',
+		default: 1,
+		component: (newProps) => {
+			let props = {
+				initialValue: 1,
+				minValue: 1,
+				maxValue: 7,
+				required: true
+			}
+			props = {...props, ...newProps};
+			return <GameNumericInput {...props} />
+		}
+	},
+	{
+		name: 'timer',
+		displayName: 'Timer',
+		default: 0,
+		component: (newProps) => {
+			let props = {
+				initialValue: 0,
+				minValue: 0,
+				required: true
+			}
+			props = {...props, ...newProps};
+			return <GameNumericInput {...props} />
+		}
+	}
+];
+```
 
 ## API
 
