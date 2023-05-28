@@ -1,5 +1,3 @@
-import Highlight from '@site/src/components/Highlight';
-
 # Modes
 
 - The main logic of the game mode should go here.

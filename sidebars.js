@@ -17,6 +17,7 @@ const sidebars = {
   docSidebar: [
 	'intro',
 	'runprodserver',
+	'rundevserver',
 	{
 		type: 'category',
 		label: 'Tutorial',
@@ -43,8 +44,8 @@ const sidebars = {
 					'Tutorial/Components/widgets'
 				]
 			},
-			'Tutorial/rundevserver',
-			'Tutorial/events'
+			'Tutorial/events',
+			'Tutorial/gifs'
 		]
 	}
 

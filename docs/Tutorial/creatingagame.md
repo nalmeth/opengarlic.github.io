@@ -24,4 +24,4 @@ export default Games;
 
 ## Run the development server
 
-[How to run dev server](rundevserver)
+[How to run dev server](/docs/rundevserver)
