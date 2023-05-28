@@ -51,6 +51,7 @@
 - Redis Server [https://redis.io/](https://redis.io/)
 - RedisJSON module [https://redis.io/docs/stack/json/](https://redis.io/docs/stack/json/)
 - Redis Client: [https://www.npmjs.com/package/redis](https://www.npmjs.com/package/redis)
+- Gifski: [https://gif.ski](https://gif.ski)
 
 ## Requirements
 
