@@ -65,6 +65,11 @@ const config = {
     ({
       // Replace with your project's social card
     //   image: 'img/docusaurus-social-card.jpg',
+	  colorMode: {
+		defaultMode: 'dark',
+		disableSwitch: false,
+		respectPrefersColorScheme: true
+	  },
       navbar: {
         title: 'OpenGarlic',
         logo: {
