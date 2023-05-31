@@ -26,6 +26,10 @@ Configure the following in .env
 
 ### Build and Start
 
+:::info
+Be sure to install dependencies for both client and server.
+:::
+
 ```bash
 docker compose build
 docker compose up -d
@@ -34,13 +38,15 @@ docker compose up -d
 ## Socket.IO Admin UI
 
 :::danger
-At the moment, this interface is not secured! Securing it is on the agenda.
-
-Either secure it yourself or do not run the admin ui container.
+At the moment, this UI is not fully secured. Therefore, access
+is limited to localhost. If you choose to run this in production,
+you will probably want to add extra security.
 :::
 
-```
-http://example.com:85
+```bash
+docker compose --file sio-admin-compose.yml up -d
 
-Enter 'http://example.com' as the Server URL
+http://localhost:85
+
+Enter 'http://localhost:85' as the Server URL
 ```

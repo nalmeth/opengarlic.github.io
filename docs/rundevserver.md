@@ -23,14 +23,16 @@ Make sure output is into client/cert directory using the given names. Or change 
 ## Start the server and client
 
 :::info
-You can use the provided docker containers for development.
+You can use the provided docker containers for Redis and Socket.io admin ui
+during development.
 ```bash
-docker compose -f dev-compose.yml up -d
+docker compose --file dev-compose.yml up -d
 ```
 :::
 
-### Run
+### Install and Run
 ```bash
+npm i
 npm run dev
 ```
 

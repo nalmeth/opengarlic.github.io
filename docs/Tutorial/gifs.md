@@ -18,19 +18,21 @@ To make compatible frames:
 
 ```ts title="modules/FrameMakers/TextFrame.js"
 // Creates a png frame that display text
-createFrame:function(stageSize, slices, colors, frameData, savePath)	// stageSize:object { width:number, height:number }
-																		// slices:array List of slices for the background generation
-																		// colors:array List of colors for background generation
-																		// frameData:object { value:string, name:string } Text to display and username
-																		// savePath:string Path to save the frame
+// stageSize - { width:number, height:number }
+// slices - List of slices for the background generation.
+// colors - List of colors for background generation.
+// frameData - Text to display and username. { value:string, name:string }
+// savePath - Path to save the frame.
+createFrame:function(stageSize:object, slices:Array<object>, colors:Array<string>, frameData:object, savePath:string)
 ```
 ```ts title="modules/FrameMakers/ImageFrame.js"
-createFrame:function(stageSize, slices, colors, frameData, savePath, tmpPath)	// stageSize:object { width:number, height:number }
-																				// slices:array List of slices for the background generation
-																				// colors:array List of colors for background generation
-																				// frameData:object { value:string, name:string } Text to display and username
-																				// savePath:string Path to save the frame
-																				// tmpPath:string Path to save temporary intermediate image (auto deleted)
+// stageSize:object { width:number, height:number }
+// slices - List of slices for the background generation.
+// colors - List of colors for background generation.
+// frameData - Text to display and username. { value:string, name:string }
+// savePath - Path to save the frame.
+// tmpPath - Path to save temporary intermediate image (auto deleted).
+createFrame:function(stageSize:object, slices:Array<object>, colors:Array<string>, frameData:object, savePath:string, tmpPath:string)
 ```
 :::caution
 Currently these frames are mostly calculated for the Standard mode,
@@ -48,42 +50,48 @@ your frames.
 // you provide grid slices in which to generate.
 
 // Creates a colored background with random stars.
-createBackground:function(stageSize, layer, slices, colors)	// stageSize:object { width:number, height:number }
-															// layer:Konva.layer The layer object on which to draw.
-															// slices:array List of slice objects passed to createStars.
-															// colors:array List of colors, one is randomly selected for
-															// 				the background, the rest used for stars.
+// stageSize - { width:number, height:number }
+// layer - The layer object on which to draw.
+// slices - List of slice objects passed to createStars.
+// colors - List of colors, one is randomly selected for
+// 				the background, the rest used for stars.
+createBackground:function(stageSize:object, layer:Konva.Layer, slices:Array<object>, colors:Array<string>)
 
 // Creates random 4 and 8 pointed stars on the given layer.
-createStars:function(slice, starColors, layer)		// slice:object { startX:number, endX:number, startY:number, endY: number }
-													// starColors:array ['#000','#F00', ...] List of randomly selected colors
-													// layer:Konva.layer The layer object on which to draw
+// slice - { startX:number, endX:number, startY:number, endY: number }
+// starColors - ['#000','#F00', ...] List of randomly selected colors
+// layer - The layer object on which to draw
+createStars:function(slice:object, starColors:Array<string>, layer:Konva.Layer)
 
 // Creates a chat bubble in which to display text.
 // Note: currently some of the calculations for placement may only work for Standard stage size.
-createTextBubble:function(stageSize, position, layer)	// stageSize:object { width:number, height:number }
-														// position:object { x:number, y:number } Upper-left corner of the bubble.
-														// layer:Konva.layer The layer object on which to draw.
+// stageSize - { width:number, height:number }
+// position - Upper-left corner of the bubble. { x:number, y:number }
+// layer - The layer object on which to draw.
+createTextBubble:function(stageSize:object, position:object, layer:Konva.Layer)
 
 // Creates an anonymous user icon.
-createUserIcon:function(position, layer)	// position:object { x:number, y:number } Position to place the icon.
-											// layer:Konva.Layer The layer object on which to draw.
+// position - Position to place the icon. { x:number, y:number }
+// layer - The layer object on which to draw.
+createUserIcon:function(position:object, layer:Konva.Layer)
 
 // Calculate width of text to display with the given font.
-getTextWidth:function(text, font)			// text:string The text to measure.
-											// font:string Size & Font (ex. '12px sans-serif')
+// text - The text to measure.
+// font - Size & Font (ex. '12px sans-serif')
+getTextWidth:function(text:string, font:string)
 
 // Creates a box for displaying a username.
-createUserNameBox:function(position, width, height, layer)	// position:object { x:number, y: number } Upper-left corner of the box.
-															// width:number Width of the box. (getTextWidth can be useful for this)
-															// height:number Height of the box.
-															// layer:Konva.Layer The layer object on which to draw.
+// position - Upper-left corner of the box. { x:number, y: number }
+// width - Width of the box. (getTextWidth can be useful for this)
+// height - Height of the box.
+// layer - The layer object on which to draw.
+createUserNameBox:function(position:object, width:number, height:number, layer:Konva.Layer)
 ```
 
 ## Create the Maker for your mode
 
-- Create your color array
-- Create your array of slices for the canvas
+- Create your color Array
+- Create your Array of slices for the canvas
 - Create your stage size
 - Export a function named 'generateFrames' (see below)
 
