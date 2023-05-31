@@ -3,7 +3,7 @@
 ## What is this?
 
 > This is a platform for social drawing games on a webpage.
-> The standard game mode is based on the children's game: Telephone.
+> The standard game mode is based on the children's game: [Telephone](https://en.wikipedia.org/wiki/Chinese_whispers).
 > However, different game modes can be developed to plugin.
 
 ## What's with the name?
